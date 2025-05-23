@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <link rel="stylesheet" href="eventpage.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דף מידע אודות האירועים</title>
+    <style>
+        /* הוסף עיצובים לפי הצורך */
+    </style>
+</head>
+<body>
+
+    <h1 id="title">כותרת התמונה</h1>
+    <div id="dynamic-content">
+        <!-- התוכן הדינמי יוצג כאן -->
+    </div>
+
+    <script>
+        // מערך התוכן הדינמי לכל תמונה
+        const dynamicContent = [
+        {
+                title: "בחירת אולם אירועים",
+                content: `
+                    <h2>ברוך הבא לבחירת אולם אירועים</h2>
+                    <p>כאן תוכל לבחור את האולם המתאים עבורך.</p>
+                    <div class="pichers">
+    <figure>
+        <a href="https://www.amare.co.il/">
+            <img src="2025-01-02.jpg" width="300" height="200" alt="AMERE">
+        </a>
+        <figcaption>AMERE</figcaption>
+    </figure>
+    
+    <figure>
+        <a href="https://gavri-el.co.il/?gad_source=1">
+            <img src="גבריאל.jpg" alt="גבריאל">
+        </a>
+        <figcaption>GAVRIEL</figcaption>
+    </figure>
+
+    <figure>
+        <a href="https://troya-garden.co.il/">
+            <img src="טרויה.jpg"  alt="TROYA">
+        </a>
+        <figcaption>TROYA</figcaption>
+    </figure>
+    <figure>
+        <a href="https://www.amare.co.il/">
+            <img src="2025-01-02.jpg"  alt="AMERE">
+        </a>
+        <figcaption>AMERE</figcaption>
+    </figure>
+</div>
+                `
+            },
+            {
+                title: "בחירת עיצוב חופה",
+                content: `
+                    <h2>ברוך הבא לעיצוב החופה</h2>
+                    <p>כאן תוכל לבחור את העיצוב המושלם לחופה.</p>
+                    <img src="IMG-20180730-WA0077-1.jpg" alt="תמונה של עיצוב חופה" width="300">
+                `
+            },
+            {
+                title: "בחירת עיצוב אולם",
+                content: `
+                    <h2>ברוך הבא לעיצוב האולם</h2>
+                    <p>כאן תוכל לבחור את העיצוב המתאים לאולם שלך.</p>
+                    <img src="עיצוב-ללא-שם-2024-11-13T100720.894.jpg" alt="תמונה של עיצוב אולם" width="300">
+                `
+            },
+            {
+                title: "בחירת דייגי",
+                content: `
+                    <h2>בחר את הדייגי שלך</h2>
+                    <p>כאן תוכל לבחור את הדייגי המתאים לאירוע שלך.</p>
+                    <img src="djik_i.jpg" alt="תמונה של דייגי" width="300">
+                `
+            },
+            {
+                title: "בחירת שמלת כלה",
+                content: `
+                    <h2>בחר את שמלת הכלה שלך</h2>
+                    <p>כאן תוכל לבחור את שמלת הכלה המושלמת לאירוע שלך.</p>
+                    <img src="Refael+Mizrahi+Fashion+Photography+(968)+-+Copy+RET-640w.webp" alt="תמונה של שמלת כלה" width="300">
+                `
+            },
+            {
+                title: "בחירת מקום התארגנות",
+                content: `
+                    <h2>בחר את מקום ההתארגנות</h2>
+                    <p>כאן תוכל לבחור את מקום ההתארגנות המתאים לך.</p>
+                    <img src="0002.jpg" alt="תמונה של מקום התארגנות" width="300">
+                `
+            },
+            {
+                title: "בחירת עיצוב רכב חתונה",
+                content: `
+                    <h2>בחר את עיצוב הרכב</h2>
+                    <p>כאן תוכל לבחור את עיצוב הרכב לחתונה שלך.</p>
+                    <img src="טיפים-לקישוט-רכב-החתונה-שלכם.png" alt="תמונה של עיצוב רכב" width="300">
+                `
+            },
+            {
+                title: "בחירת עיצוב זרי כלה",
+                content: `
+                    <h2>בחר את עיצוב זרי הכלה</h2>
+                    <p>כאן תוכל לבחור את עיצוב זרי הכלה שלך.</p>
+                    <img src="688d7_1SPLIT202008SPLIT17132359.jpg" alt="תמונה של זרי כלה" width="300">
+                `
+            },
+            {
+                title: "בחירת איפור+תסרוקת",
+                content: `
+                    <h2>בחר את המאפרת והמיסרקת</h2>
+                    <p>כאן תוכל לבחור את המאפרת והמיסרקת שלך.</p>
+                    <img src="איפור-כלות-אנה-אפללו-בת-ים-תל-אביב-e1684707201835.jpg" alt="תמונה של איפור כלה" width="300">
+                `
+            },
+            {
+                title: "בחירת צלם",
+                content: `
+                    <h2>בחר את הצלם שלך</h2>
+                    <p>כאן תוכל לבחור את הצלם לאירוע שלך.</p>
+                    <img src="צלם-חתונות.jpg" alt="תמונה של צלם" width="300">
+                `
+            },
+            {
+                title: "בחירת אטרקציות לאירוע",
+                content: `
+                    <h2>בחר את האטרקציות לאירוע</h2>
+                    <p>כאן תוכל לבחור את האטרקציות לאירוע שלך.</p>
+                    <img src="Untitled-1-1024x509.webp" alt="תמונה של אטרקציות לאירוע" width="300">
+                `
+            },
+            {
+                title: "בחירת חליפה לחתן",
+                content: `
+                    <h2>בחר את החליפה לחתן</h2>
+                    <p>כאן תוכל לבחור את החליפה לחתן.</p>
+                    <img src="אופנה-בז-כחול-כפתור-אחד-טוקסידו-חתונה-.jpg" alt="תמונה של חליפת חתן" width="300">
+                `
+            }
+        ];
+
+        // פונקציה לקרוא את הפרמטר "index" מה-URL
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // קבלת הערך של ה-index מה-URL
+        const index = getQueryParam("index");
+
+        // אם ה-index קיים, מציג את התוכן המתאים
+        if (index !== null && dynamicContent[index]) {
+            document.getElementById("title").innerText = dynamicContent[index].title;
+            document.getElementById("dynamic-content").innerHTML = dynamicContent[index].content;
+        } else {
+            document.getElementById("dynamic-content").innerHTML = "<p>תוכן לא נמצא.</p>";
+        }
+    </script>
+
+</body>
+</html>
